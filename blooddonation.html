@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blood Donation System</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f0f0f0;
+    }
+
+    header nav {
+      background-color: #ff4d4d;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    header nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    header nav ul li {
+      display: inline;
+      margin: 0 20px;
+    }
+
+    header nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    header nav ul li a:hover {
+      color: #fff0f0;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #ff4d4d, #ff9999);
+      color: white;
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    .hero-content h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+
+    button {
+      background-color: #ff3333;
+      color: white;
+      padding: 10px 30px;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #ff4d4d;
+    }
+
+    .images {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .image-container img {
+      width: 400px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .form-container {
+      background-color: white;
+      padding: 30px;
+      margin: 20px auto;
+      width: 50%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .form-container label {
+      font-size: 18px;
+      margin: 10px 0;
+      display: block;
+    }
+
+    .form-container input,
+    .form-container select,
+    .form-container button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-container button {
+      background-color: #ff3333;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .form-container button:hover {
+      background-color: #ff4d4d;
+    }
+
+    table {
+      width: 80%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+
+    th, td {
+      padding: 15px;
+    }
+
+    th {
+      background-color: #ff4d4d;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#donor-form">Donor Registration</a></li>
+        <li><a href="#donation-form">Blood Donation</a></li>
+        <li><a href="#request-form">Hospital Blood Request</a></li>
+        <li><a href="#inventory">Blood Inventory</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Welcome to Blood Donation</h1>
+      <p>Your donation can save lives. Join us in making a difference.</p>
+      <button onclick="location.href='#donor-form'">Donate Now</button>
+    </div>
+  </section>
+
+  <!-- Images -->
+  <section class="images">
+    <div class="image-container">
+      <img src="C:\Users\Avshesh\Downloads\blooddonation.jpg" alt="Donating Blood" />
+      <img src="C:\Users\Avshesh\Downloads\bloodevent.jpg" alt="Blood Event" />
+    </div>
+  </section>
+
+  <!-- Donor Registration -->
+  <section class="form-container" id="donor-form">
+    <h2>Donor Registration</h2>
+    <form action="#" method="POST">
+      <label>Name:</label>
+      <input type="text" name="name" required />
+      <label>Age:</label>
+      <input type="number" name="age" required />
+      <label>Blood Type:</label>
+      <select name="bloodType" required>
+        <option>A+</option><option>B+</option><option>O+</option><option>AB+</option>
+        <option>A-</option><option>B-</option><option>O-</option><option>AB-</option>
+      </select>
+      <label>Contact:</label>
+      <input type="text" name="contact" required />
+      <button type="submit">Register</button>
+    </form>
+  </section>
+
+  <!-- Blood Donation Entry -->
+  <section class="form-container" id="donation-form">
+    <h2>Blood Donation Entry</h2>
+    <form action="#" method="POST">
+      <label>Donor ID:</label>
+      <input type="text" name="donorID" required />
+      <label>Donation Date:</label>
+      <input type="date" name="donationDate" required />
+      <label>Amount of Blood (ml):</label>
+      <input type="number" name="donatedBlood" required />
+      <button type="submit">Submit Donation</button>
+    </form>
+  </section>
+
+  <!-- Hospital Blood Request -->
+  <section class="form-container" id="request-form">
+    <h2>Hospital Blood Request</h2>
+    <form action="#" method="POST">
+      <label>Hospital Name:</label>
+      <input type="text" name="hospitalName" required />
+      <label>Doctor In-Charge:</label>
+      <input type="text" name="doctorName" required />
+      <label>Blood Type Needed:</label>
+      <select name="bloodNeeded" required>
+        <option>A+</option><option>B+</option><option>O+</option><option>AB+</option>
+        <option>A-</option><option>B-</option><option>O-</option><option>AB-</option>
+      </select>
+      <label>Quantity Needed (ml):</label>
+      <input type="number" name="quantity" required />
+      <label>Request Date:</label>
+      <input type="date" name="requestDate" required />
+      <button type="submit">Submit Request</button>
+    </form>
+  </section>
+
+  <!-- Inventory -->
+  <section class="inventory-container" id="inventory">
+    <h2 style="text-align: center;">Blood Inventory</h2>
+    <table>
+      <tr><th>Blood Type</th><th>Quantity (ml)</th><th>Last Updated</th></tr>
+      <tr><td>A+</td><td>5000</td><td>2025-04-23</td></tr>
+      <tr><td>B+</td><td>3200</td><td>2025-04-22</td></tr>
+      <tr><td>O+</td><td>4700</td><td>2025-04-21</td></tr>
+    </table>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Blood Donation System. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
